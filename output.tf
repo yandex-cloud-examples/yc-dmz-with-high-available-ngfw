@@ -45,11 +45,11 @@ output "dmz-web-server-nlb_ip_address" {
 }
 
 output "route-switcher_nlb" {
-  value = module.route_switcher.nlb_for_route-switcher
+  value = module.route_switcher.route-switcher_nlb
 }
 
 output "route-switcher_bucket" {
-  value = module.route_switcher.bucket_for_route-switcher
+  value = module.route_switcher.route-switcher_bucket
 }
 
 output "route-switcher_function" {
