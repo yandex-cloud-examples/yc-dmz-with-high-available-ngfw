@@ -110,14 +110,3 @@ variable "subnet-a_vpc_7" {
 variable "subnet-b_vpc_7" {
   default = null
 }
-
-//--VPC 8--
-variable "vpc_name_8" {
-  default     = null
-}
-variable "subnet-a_vpc_8" {
-  default = null
-}
-variable "subnet-b_vpc_8" {
-  default = null
-}

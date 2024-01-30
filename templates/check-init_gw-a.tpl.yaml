@@ -15,10 +15,10 @@ system:
   dns2: 77.88.8.8
   dns3: 77.88.8.1
   ntp1:
-    address: ntp.checkpoint.com
+    address: ntp1.yandex.net
     version: 4
   ntp2:
-    address: ntp2.checkpoint.com
+    address: ntp2.yandex.net
     version: 4
 
 routing:

@@ -45,7 +45,3 @@ subnet-b_vpc_6 = "10.163.2.0/24"
 vpc_name_7 = "demo-vpc7"
 subnet-a_vpc_7 = "10.164.1.0/24"
 subnet-b_vpc_7 = "10.164.2.0/24"
-//--VPC 8--
-vpc_name_8 = "demo-vpc8"
-subnet-a_vpc_8 = "10.165.1.0/24"
-subnet-b_vpc_8 = "10.165.2.0/24"

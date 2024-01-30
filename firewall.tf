@@ -87,14 +87,6 @@ resource "yandex_compute_instance" "fw-a" {
     nat = false
     security_group_ids = [yandex_vpc_security_group.vpc7-sg.id]
   }
-  
-  network_interface {
-    // vpc8-int
-    subnet_id  = yandex_vpc_subnet.subnet-a_vpc_8.id
-    ip_address = "${cidrhost(var.subnet-a_vpc_8, 10)}"
-    nat = false
-    security_group_ids = [yandex_vpc_security_group.vpc8-sg.id]
-  }
 
   metadata = {
     serial-port-enable = 1
@@ -109,7 +101,6 @@ resource "yandex_compute_instance" "fw-a" {
         "${var.subnet-b_vpc_5}" = "${cidrhost(var.subnet-a_vpc_5, 1)}"
         "${var.subnet-b_vpc_6}" = "${cidrhost(var.subnet-a_vpc_6, 1)}"
         "${var.subnet-b_vpc_7}" = "${cidrhost(var.subnet-a_vpc_7, 1)}"
-        "${var.subnet-b_vpc_8}" = "${cidrhost(var.subnet-a_vpc_8, 1)}"
         "198.18.235.0/24"       = "${cidrhost(var.subnet-a_vpc_4, 1)}"
         "198.18.248.0/24"       = "${cidrhost(var.subnet-a_vpc_4, 1)}"
       }
@@ -194,14 +185,6 @@ resource "yandex_compute_instance" "fw-b" {
     security_group_ids = [yandex_vpc_security_group.vpc7-sg.id]
   }
 
-  network_interface {
-    // vpc8-int
-    subnet_id  = yandex_vpc_subnet.subnet-b_vpc_8.id
-    ip_address = "${cidrhost(var.subnet-b_vpc_8, 10)}"
-    nat = false
-    security_group_ids = [yandex_vpc_security_group.vpc8-sg.id]
-  }
-
   metadata = {
     serial-port-enable = 1
     user-data = templatefile("./templates/check-init_gw-b.tpl.yaml",
@@ -215,7 +198,6 @@ resource "yandex_compute_instance" "fw-b" {
         "${var.subnet-a_vpc_5}" = "${cidrhost(var.subnet-b_vpc_5, 1)}"
         "${var.subnet-a_vpc_6}" = "${cidrhost(var.subnet-b_vpc_6, 1)}"
         "${var.subnet-a_vpc_7}" = "${cidrhost(var.subnet-b_vpc_7, 1)}"
-        "${var.subnet-a_vpc_8}" = "${cidrhost(var.subnet-b_vpc_8, 1)}"
         "198.18.235.0/24"       = "${cidrhost(var.subnet-b_vpc_4, 1)}"
         "198.18.248.0/24"       = "${cidrhost(var.subnet-b_vpc_4, 1)}"
       }

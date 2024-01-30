@@ -33,8 +33,3 @@ resource "yandex_resourcemanager_folder" "folder7" {
   cloud_id = var.cloud_id
   name = var.vpc_name_7
 }
-
-resource "yandex_resourcemanager_folder" "folder8" {
-  cloud_id = var.cloud_id
-  name = var.vpc_name_8
-}

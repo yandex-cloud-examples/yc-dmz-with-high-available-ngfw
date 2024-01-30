@@ -381,37 +381,3 @@ resource "yandex_vpc_security_group" "vpc7-sg" {
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-// Create security group for VPC 8 segment
-resource "yandex_vpc_security_group" "vpc8-sg" {
-  name        = "vpc8-sg"
-  description = "Security group for vpc8 segment"
-  folder_id   = yandex_resourcemanager_folder.folder8.id
-  network_id  = yandex_vpc_network.vpc_name_8.id
-
-  ingress {
-    protocol            = "TCP"
-    description         = "HTTPS"
-    port                = 443
-    predefined_target   = "self_security_group"
-  }
-
-  ingress {
-    protocol            = "TCP"
-    description         = "SSH"
-    port                = 22
-    predefined_target   = "self_security_group"
-  }
-
-  ingress {
-    protocol            = "ICMP"
-    description         = "ICMP"
-    predefined_target   = "self_security_group"
-  }
-
-  egress {
-    protocol       = "ANY"
-    description    = "outbound traffic"
-    v4_cidr_blocks = ["0.0.0.0/0"]
-  }
-}

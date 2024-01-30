@@ -16,7 +16,7 @@ config_system:
   upload_info: "true"
   secondary: 77.88.8.8
   tertiary: 77.88.8.1
-  ntp_primary: ntp.checkpoint.com
+  ntp_primary: ntp1.yandex.net
   ntp_primary_version: 4
-  ntp_secondary: ntp2.checkpoint.com
+  ntp_secondary: ntp2.yandex.net
   ntp_secondary_version: 4

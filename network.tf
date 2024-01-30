@@ -89,16 +89,6 @@ resource "yandex_vpc_route_table" "mgmt-rt" {
     destination_prefix = var.subnet-b_vpc_7
     next_hop_address   = "${cidrhost(var.subnet-a_vpc_4, 10)}"
   }
-
-  static_route {
-    destination_prefix = var.subnet-a_vpc_8
-    next_hop_address   = "${cidrhost(var.subnet-a_vpc_4, 10)}"
-  }
-  
-  static_route {
-    destination_prefix = var.subnet-b_vpc_8
-    next_hop_address   = "${cidrhost(var.subnet-a_vpc_4, 10)}"
-  }
 }
 
 // Create static routes for database vpc
@@ -263,27 +253,6 @@ resource "yandex_vpc_subnet" "subnet-b_vpc_7" {
   network_id     = yandex_vpc_network.vpc_name_7.id
   v4_cidr_blocks = [var.subnet-b_vpc_7]
 }
-
-// VPC-8
-resource "yandex_vpc_network" "vpc_name_8" {
-  name = var.vpc_name_8
-  folder_id = yandex_resourcemanager_folder.folder8.id
-}
-resource "yandex_vpc_subnet" "subnet-a_vpc_8" {
-  folder_id = yandex_resourcemanager_folder.folder8.id
-  name           = var.subnet-a_vpc_8
-  zone           = "ru-central1-a"
-  network_id     = yandex_vpc_network.vpc_name_8.id
-  v4_cidr_blocks = [var.subnet-a_vpc_8]
-}
-resource "yandex_vpc_subnet" "subnet-b_vpc_8" {
-  folder_id = yandex_resourcemanager_folder.folder8.id
-  name           = var.subnet-b_vpc_8
-  zone           = "ru-central1-b"
-  network_id     = yandex_vpc_network.vpc_name_8.id
-  v4_cidr_blocks = [var.subnet-b_vpc_8]
-}
-
 
 // Create static public IP-------------------
 
