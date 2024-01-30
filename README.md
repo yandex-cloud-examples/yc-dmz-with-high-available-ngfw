@@ -420,7 +420,6 @@ Application Load Balancer предоставляет расширенные во
     | eth4 | 10.162.1.10/24 | FW-a_eth4 -> database (Internal) | InternalZone | Prevent and Log |
     | eth5 | 10.163.1.10/24 | This Network (Internal) | InternalZone | Prevent and Log |
     | eth6 | 10.164.1.10/24 | This Network (Internal) | InternalZone | Prevent and Log |
-    | eth7 | 10.165.1.10/24 | This Network (Internal) | InternalZone | Prevent and Log |
 
     <img src="./images/fw-a_topology_all_intf.png" alt="Интерфейсы FW-A" width="400"/>    
 
