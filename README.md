@@ -123,7 +123,7 @@ Application Load Balancer предоставляет расширенные во
 
 ### Terraform модуль route-switcher
 
-В этом примере используется [модуль yc-route-switcher-v2](https://github.com/yandex-cloud/yc-architect-solution-library/tree/main/yc-route-switcher-v2) из репозитория Yandex Cloud Architect Solutions Library.
+В этом примере используется [решение yc-route-switcher](https://github.com/yandex-cloud-examples/yc-route-switcher/).
 
 В облачной сети Yandex Cloud не поддерживается работа протоколов VRRP/HSRP между FW. 
 
@@ -241,10 +241,10 @@ Application Load Balancer предоставляет расширенные во
 
 ## Развертывание Terraform сценария
 
-1. Склонируйте репозиторий `yandex-cloud/yc-architect-solution-library` из GitHub и перейдите в папку сценария `dmz-fw-ha`:
+1. Склонируйте репозиторий `yandex-cloud-examples/yc-dmz-with-high-available-ngfw` из GitHub и перейдите в папку сценария `dmz-fw-ha`:
     ```bash
-    git clone https://github.com/yandex-cloud/yc-architect-solution-library.git
-    cd yc-architect-solution-library/demos/dmz-fw-ha
+    git clone https://github.com/yandex-cloud-examples/yc-dmz-with-high-available-ngfw.git
+    cd yc-dmz-with-high-available-ngfw
     ```
 
 2. Настройте окружение для развертывания ([подробности](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart#get-credentials)):
