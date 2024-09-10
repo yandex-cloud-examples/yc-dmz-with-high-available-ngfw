@@ -1,10 +1,11 @@
 module "route_switcher" {
-  source    = "./modules/route-switcher/"
+  source    = "github.com/yandex-cloud-examples/yc-route-switcher"
   start_module          = false
   folder_id = yandex_resourcemanager_folder.folder4.id
   route_table_folder_list = [yandex_resourcemanager_folder.folder1.id, yandex_resourcemanager_folder.folder2.id, yandex_resourcemanager_folder.folder4.id, yandex_resourcemanager_folder.folder5.id]
   route_table_list      = [yandex_vpc_route_table.dmz-rt.id, yandex_vpc_route_table.app-rt.id, yandex_vpc_route_table.mgmt-rt.id, yandex_vpc_route_table.database-rt.id]
   router_healthcheck_port = 443
+  router_healthcheck_interval = 60
   back_to_primary = true
   routers = [
     {
